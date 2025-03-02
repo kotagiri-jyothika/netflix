@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: 0;
+            scrollbar-width: none;
+        }
+          .page{
+            width: 100vw;
+            height: 100vh;
+            background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)) ,url(cover.jpg);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            position:relative;
+            color: white;
+    
+         }
+        .page-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            color: white;
+            width: 80%;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.251);
+        }
+        .h-intro{
+            font-weight: bold;
+            font-size: 900;
+        }
+        .p-intro{
+            font-size: 1.2rem;
+        }
+         .email{
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+          gap: 10px;
+          position: relative;
+         }
+
+         .email-area{
+            width: 300px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid white;
+
+         }
+        
+         .button-2{
+            background: red;
+                color: white;
+            padding: 10px 20px;
+               border: none;
+             border-radius: 5px;
+              font-size: 1.2rem;
+             font-weight: bold;
+             cursor: pointer;
+         }
+           .button-2:hover{
+            background: rgb(187, 38, 15);
+           }
+           .logo-left{
+            position: absolute;
+            top: 20px;
+            left:30px;
+          }
+          .Netflix{
+            width: 150px;
+            height: auto;
+          }
+          .btn{
+            background: red;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+          }
+          .btn:hover{
+            background: white;
+            color: black;
+          }
+        
+        .righttop{
+            display: flex;
+    align-items: center;
+    gap: 15px; 
+    position: absolute;
+    top: 20px;
+    right: 20px; 
+           justify-content: center;
+           flex-direction: row;
+}
+     .page::after{
+      content: "";
+      position: absolute;
+      bottom: -30px;
+     width: 100%;
+      height: 50px;
+      border-top:  3px solid red;
+      border-radius: 50%;
+      box-shadow:inset 0 10px 10px  rgb(59, 59, 157);
+     }
+     .page-down{
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      position: relative;
+    
+     }
+     .Trending {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          color: white;
+          margin: 40px;
+     }
+    
+     .boxes{
+      width: 80%;
+      height: 400px;
+      position: absolute;
+      left: 130px;
+      top: 50px;
+      display: flex;
+      align-items: center;
+      overflow: scroll;
+      gap: 50px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      margin-bottom: 30px;
+      
+     }
+     .box img{
+      width: 180px;
+      height: 270px;
+      border-radius: 10px;
+      cursor: pointer;
+     }
+     .box{
+      position: relative;
+      gap: 50px;
+     }
+     .box1::after{
+      content: "1";
+      -webkit-text-stroke: 4px rgba(255, 255, 255) ;
+      font-size: 120px;
+      font-weight: 750;
+      position: absolute;
+      bottom: -10px;
+      left: -30px;
+      color: black;
+      border-color: 3px solid white;
+     cursor: pointer;
+     }
+     .box2::after{
+      content: "2";
+      -webkit-text-stroke: 4px rgba(255, 255, 255) ;
+      font-size: 120px;
+      font-weight: 750;
+      position: absolute;
+      bottom: -10px;
+      left: -30px;
+      color: black;
+      border-color: 3px solid white;
+     cursor: pointer;
+     }
+     .box3::after{
+      content: "3";
+      -webkit-text-stroke: 4px rgba(255, 255, 255) ;
+      font-size: 120px;
+      font-weight: 750;
+      position: absolute;
+      bottom: -10px;
+      left: -30px;
+      color: black;
+      border-color: 3px solid white;
+     cursor: pointer;
+     }
+     .box4::after{
+      content: "4";
+      -webkit-text-stroke: 4px rgba(255, 255, 255) ;
+      font-size: 120px;
+      font-weight: 750;
+      position: absolute;
+      bottom: -10px;
+      left: -30px;
+      color: black;
+      border-color: 3px solid white;
+     cursor: pointer;
+     }
+     .box5::after{
+      content: "5";
+      -webkit-text-stroke: 4px rgba(255, 255, 255) ;
+      font-size: 120px;
+      font-weight: 750;
+      position: absolute;
+      bottom: -10px;
+      left: -30px;
+      color: black;
+      border-color: 3px solid white;
+     cursor: pointer;
+     }
+     .box6::after{
+      content: "6";
+      -webkit-text-stroke: 4px rgba(255, 255, 255) ;
+      font-size: 120px;
+      font-weight: 750;
+      position: absolute;
+      bottom: -10px;
+      left: -30px;
+      color: black;
+      border-color: 3px solid white;
+     cursor: pointer;
+     }
+     .box7::after{
+      content: "7";
+      -webkit-text-stroke: 4px rgba(255, 255, 255) ;
+      font-size: 120px;
+      font-weight: 750;
+      position: absolute;
+      bottom: -10px;
+      left: -30px;
+      color: black;
+      border-color: 3px solid white;
+     cursor: pointer;
+     }
+     .box8::after{
+      content: "8";
+      -webkit-text-stroke: 4px rgba(255, 255, 255) ;
+      font-size: 120px;
+      font-weight: 750;
+      position: absolute;
+      bottom: -10px;
+      left: -30px;
+      color: black;
+      border-color: 3px solid white;
+     cursor: pointer;
+     }
+     .box9::after{
+      content: "9";
+      -webkit-text-stroke: 4px rgba(255, 255, 255) ;
+      font-size: 120px;
+      font-weight: 750;
+      position: absolute;
+      bottom: -10px;
+      left: -30px;
+      color: black;
+      border-color: 3px solid white;
+     cursor: pointer;
+     }
+     .box:hover {
+     scale: 1.1;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+ .reasons-container {
+    text-align: center;
+    height: 100vh;
+    padding: 50px 20px;
+    width: 100vw;
+    background-color: black;
+   position: absolute;
+   top: 400px;
+   
+}
+.reasons-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.reasons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    position: absolute;
+    top: 110px;
+    left: 100px;
+    gap: 50px;
+    
+   
+}
+.reason-card {
+  background: #c31432;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: 280px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .reasons-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reason-card {
+        width: 80%;
+    }
+}
+.more{
+  position: absolute;
+  left: 150px;
+  color: white;
+  top: 50px;
+}
+.reasons-grid img{
+  width: 10%;
+  position: absolute;
+  bottom: -5px;
+  right: 10px;
+}
+.question{
+  text-align: center;
+    padding: 50px 20px;
+    width: 100vw;
+    background-color: black;
+   position: absolute;
+   top: 900px;
+   height: 100vh;
+  
+}
+.asking{
+  position: absolute;
+  left: 110px;
+  color: white;
+  top: 10px;
+}
+.accordion{
+  width: 80%;
+  position: absolute;
+left: 110px;
+background-color: gray;
+color: white;
+border: none;
+
+}
+.accordion-items{
+  gap: 30px;
+}
+.tt{
+  text-align: center;
+    height: 100vh;
+    padding: 50px 20px;
+    width: 100vw;
+   position: absolute;
+   top: 1100px
+   
+}
+.emailbottom{
+  text-align: center;
+    height: 10vh;
+    padding: 50px 20px;
+    width: 100vw;
+   position: absolute;
+   top: 1450px;
+}
+
+    </style>
+</head>
+<body>
+    <!--bodypage-->
+    <div class="page">
+        <div class="logo-left">
+            <!--topbar-->
+           <img src="Netflix_Logo_PMS.png" class="Netflix" alt=""> </div>
+           <div class="righttop">
+
+           <div class="dropdown">
+            <button class="btn bg-transparent text-light dropdown-toggle border" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              English
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">తెలుగు</a></li>
+              <li><a class="dropdown-item" href="#">한국인</a></li>
+              <li><a class="dropdown-item" href="#">हिन्दी</a></li>
+            </ul>
+          </div>
+          <button class="btn">Sign In</button>
+           </div>
+              <!--center-->
+           <div class="page-text ">
+            <h1 class="h-intro">Unlimited films, TV<br></h1>
+            <h1 class="h-intro">programmes and<br></h1>
+            <h1 class="h-intro">more<br></h1>
+            <p class="p-intro" >Starts at $13.98. Cancel at any time.<br></p>
+            <p  class="p-intro" >Ready to watch? Enter your email to create or restart your membership.</p>
+           <!--email-->
+            <div class="email">
+                <input type="email"  class="email-area  bg-transparent text-light" placeholder="Email address ">
+                <button class="button-2">Get Started &gt;</button>
+            </div>
+           </div>
+         <!--scroll-->
+    </div>
+    <!--movie page-down-->
+    
+    <div class="page-down ">
+            <h3 class="Trending px-5">Trending Now <br></h3>
+            <div class="boxes my-2 ">
+          <div class="box box1">
+            <img src="1.png" alt="">
+            
+           </div>
+           <div class="box box2">
+           <img src="2.png" alt="">
+         
+          </div>
+          <div class="box box3">
+            <img src="3.png" alt="">
+            
+           </div>
+           <div class="box box4">
+            <img src="4.png" alt="">
+          
+           </div>
+           <div class="box box5">
+            <img src="5.png" alt="">
+      
+           </div>
+           <div class="box box6">
+            <img src="6.png" alt="">
+           
+           </div>
+           <div class="box box7">
+            <img src="7.png" alt="">
+          
+           </div>
+           <div class="box box8">
+            <img src="8.png" alt="">
+          
+           </div>
+           <div class="box box9">
+            <img src="9.png" alt="">
+          
+           </div>
+            </div>
+    
+     <!--reason box-->
+     <div class="reasons-container d-flex justify-content-center align-items-center flex-lg-row flex-md-row flex-sm-column">
+      <h3 class="more">More reasons to join</h3>
+      <div class="reasons-grid">
+          <div class="reason-card">
+              <h4>Enjoy on your TV</h4>
+              <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+          </div>
+          <div class="reason-card">
+              <h4>Download your shows to watch offline</h4>
+              <p>Save your favourites easily and always have something to watch.</p>
+          </div>
+          <div class="reason-card">
+              <h4>Watch everywhere</h4>
+              <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+          </div>
+          <div class="reason-card">
+              <h4>Create profiles for kids</h4>
+              <p>Send kids on adventures with their favourite characters in a space made just for them.</p>
+          </div>
+      </div>
+  </div>
+  <!--ask question-->
+
+  <div class="question ">
+    <h3 class="asking">Frequently Asked Questions</h3>
+  <div class="accordion " id="accordionExample">
+      <div class="accordion-item bg-secondary box-shadow-dark">
+        <h2 class="accordion-header">
+          <button class="accordion-button p-4  bg-secondary text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+           What is Netflix?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+         <p class="text-light border-none">Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.
+
+          You can watch as much as you want, whenever you want, without a single ad - all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item bg-secondary">
+        <h2 class="accordion-heade bg-secondaryr">
+          <button class="accordion-button p-4 collapsed bg-secondary text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+           How much does Netflix cost?
+
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse bg-secondary" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+           <p class="text-light">Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item bg-secondary">
+        <h2 class="accordion-header">
+          <button class="accordion-button p-4 collapsed text-light bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Where can I watch?
+          </button>
+        </h2>
+        <div id="collapseThree bg-secondary" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body bg-secondary">
+          <p class="text-light">Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.
+
+            You can also download your favourite shows with the iOS or Android app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item bg-secondary">
+        <h2 class="accordion-header">
+          <button class="accordion-button p-4 collapsed bg-secondary text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+             How do I cancel?
+          </button>
+        </h2>
+        <div id="collapseThree " class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+          <p class="text-light">Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.</p>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+ 
+  </div>
+  <!--lastemail-->
+  <div class="lastemail">
+    <p class="d-flex justify-content-center align-items-center text-light tt">Ready to watch? Enter your email to create or restart your membership.</p>
+    <div class="emailbottom">
+      <input type="email"  class="email-area  bg-transparent text-light" placeholder="Email address ">
+                <button class="button-2">Get Started &gt;</button>
+    </div>
+  </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
